@@ -1,0 +1,36 @@
+CREATE TABLE gallery (
+	ImageID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ImageGallery MEDIUMBLOB NOT NULL,
+	ImageTitle VARCHAR(120) NOT NULL,
+	ImageDescription MEDIUMTEXT NOT NULL,
+	ImageInfo VARCHAR(150) NOT NULL,
+	ImageUploadedDate TIMESTAMP NOT NULL,
+	ImageCategory ENUM('Life', 'Artwork', 'Photography') DEFAULT 'Photography' NOT NULL
+);
+
+CREATE TABLE users (
+	UserID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	UserUniqueBind VARCHAR(120) NOT NULL,
+	UserMark ENUM('Marker', 'Admin', 'Writer') DEFAULT 'Writer' NOT NULL,
+	UserName VARCHAR(60) NOT NULL,
+	UserPassword VARCHAR(120) NOT NULL,
+	UserMail VARCHAR(80) NOT NULL,
+	RUserFN VARCHAR(60) NOT NULL,
+	RUserLN VARCHAR(60) NOT NULL,
+	CreatedDate TIMESTAMP NOT NULL,
+	LastLogged TIMESTAMP NOT NULL,
+	UserStatus ENUM('Active', 'Non-Active') DEFAULT 'Non-Active' NOT NULL
+);
+
+CREATE TABLE article (
+	ArticleID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	ArticleTopicCategory
+	ArticleAuthor	
+	ArticleTitle
+	ArticleSummary
+	ArticleMain
+	ArticleComments
+	ArticleStatus ENUM('Published', 'Not-Published') DEFAULT 'Not-Published' NOT NULL,
+	ArticleUploadedDate TIMESTAMP NOT NULL,
+	ArticleEditedDate TIMESTAMP NOT NULL
+)
